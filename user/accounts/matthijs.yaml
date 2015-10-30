@@ -1,0 +1,10 @@
+email: m@mateis.nl
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Matthijs Alderliefste'
+title: Owner
+hashed_password: $2y$10$gxDcWPHknMn.eEWtubXcOOLkeBzxhOcS6OxAEj.UuJazbxr9Oh.Ee
