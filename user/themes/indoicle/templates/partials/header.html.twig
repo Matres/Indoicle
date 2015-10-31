@@ -2,7 +2,13 @@
 <div id="inner-wrap">
   <header id="top" role="banner">
     <div class="block">
-      <h1 class="block-title">Book Title</h1>
+      <h1 class="block-title">
+        {% if header.title %}
+          {{ header.title }}
+        {% else %}
+          {{ site.title }}"
+        {% endif %}
+      </h1>
       <a class="nav-btn" href="#nav" id="nav-open-btn">Book Navigation</a>
     </div>
   </header>

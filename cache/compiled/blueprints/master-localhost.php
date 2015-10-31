@@ -1,12 +1,16 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'checksum' => '39db920701d6d428a7eebbcf84555eb6:34c6f0b04220fe811da975d0e879e09b',
+    'checksum' => '39db920701d6d428a7eebbcf84555eb6:f3d3d613641a2b1201bf06b706146392',
     'files' => [
         'user/plugins' => [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/blueprints.yaml',
                 'modified' => 1446174758
+            ],
+            'plugins/blog' => [
+                'file' => 'user/plugins/blog/blueprints.yaml',
+                'modified' => 1446301560
             ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
@@ -257,6 +261,118 @@ return [
                 'label' => 'Visitors history',
                 'default' => 20,
                 'name' => 'plugins.admin.popularity.history.visitors'
+            ],
+            'plugins.blog' => [
+                'type' => '_parent',
+                'name' => 'plugins.blog'
+            ],
+            'plugins.blog.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.blog.enabled'
+            ],
+            'plugins.blog.buttons' => [
+                'type' => '_parent',
+                'name' => 'plugins.blog.buttons'
+            ],
+            'plugins.blog.buttons._simple_search' => [
+                'type' => 'toggle',
+                'label' => 'Simple search',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the simple search template from the sidebar',
+                'name' => 'plugins.blog.buttons._simple_search'
+            ],
+            'plugins.blog.buttons._related_posts' => [
+                'type' => 'toggle',
+                'label' => 'Related posts',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the related posts template from the sidebar',
+                'name' => 'plugins.blog.buttons._related_posts'
+            ],
+            'plugins.blog.buttons._random' => [
+                'type' => 'toggle',
+                'label' => 'Random',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the random template from the sidebar',
+                'name' => 'plugins.blog.buttons._random'
+            ],
+            'plugins.blog.buttons._taxonomy_list' => [
+                'type' => 'toggle',
+                'label' => 'Taxonomy list',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the taxonomy list template from the sidebar',
+                'name' => 'plugins.blog.buttons._taxonomy_list'
+            ],
+            'plugins.blog.buttons._archives' => [
+                'type' => 'toggle',
+                'label' => 'Archives',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the archives template from the sidebar',
+                'name' => 'plugins.blog.buttons._archives'
+            ],
+            'plugins.blog.buttons._feed' => [
+                'type' => 'toggle',
+                'label' => 'Feed',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'help' => 'Enable or disable the feed template from the sidebar',
+                'name' => 'plugins.blog.buttons._feed'
             ],
             'plugins.email' => [
                 'type' => '_parent',
@@ -1080,17 +1196,17 @@ return [
                     'Pacific/Tarawa' => '(UTC+12:00) Pacific/Tarawa',
                     'Pacific/Wake' => '(UTC+12:00) Pacific/Wake',
                     'Pacific/Majuro' => '(UTC+12:00) Pacific/Majuro',
-                    'Pacific/Nauru' => '(UTC+12:00) Pacific/Nauru',
-                    'Pacific/Fiji' => '(UTC+12:00) Pacific/Fiji',
                     'Asia/Kamchatka' => '(UTC+12:00) Asia/Kamchatka',
-                    'Pacific/Funafuti' => '(UTC+12:00) Pacific/Funafuti',
+                    'Pacific/Nauru' => '(UTC+12:00) Pacific/Nauru',
                     'Pacific/Kwajalein' => '(UTC+12:00) Pacific/Kwajalein',
+                    'Pacific/Funafuti' => '(UTC+12:00) Pacific/Funafuti',
                     'Asia/Anadyr' => '(UTC+12:00) Asia/Anadyr',
                     'Pacific/Tongatapu' => '(UTC+13:00) Pacific/Tongatapu',
                     'Pacific/Auckland' => '(UTC+13:00) Pacific/Auckland',
                     'Pacific/Enderbury' => '(UTC+13:00) Pacific/Enderbury',
                     'Pacific/Fakaofo' => '(UTC+13:00) Pacific/Fakaofo',
                     'Antarctica/McMurdo' => '(UTC+13:00) Antarctica/McMurdo',
+                    'Pacific/Fiji' => '(UTC+13:00) Pacific/Fiji',
                     'Pacific/Chatham' => '(UTC+13:45) Pacific/Chatham',
                     'Pacific/Apia' => '(UTC+14:00) Pacific/Apia',
                     'Pacific/Kiritimati' => '(UTC+14:00) Pacific/Kiritimati'
@@ -1113,11 +1229,11 @@ return [
                 '@data-options' => '\\Grav\\Common\\Utils::dateFormats',
                 'options' => [
                     '' => 'Auto Guess or Enter Custom',
-                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 31-10-2015 11:17)',
-                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-31 11:17)',
-                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/31/2015 11:17 am)',
-                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 11:17 31-10-2015)',
-                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 11:17 am 10/31/2015)'
+                    'd-m-Y H:i' => 'd-m-Y H:i (e.g. 31-10-2015 15:42)',
+                    'Y-m-d H:i' => 'Y-m-d H:i (e.g. 2015-10-31 15:42)',
+                    'm/d/Y h:i a' => 'm/d/Y h:i (e.g. 10/31/2015 03:42 pm)',
+                    'H:i d-m-Y' => 'H:i d-m-Y (e.g. 15:42 31-10-2015)',
+                    'h:i a m/d/Y' => 'h:i a m/d/Y (e.g. 03:42 pm 10/31/2015)'
                 ],
                 'validate' => [
                     'type' => 'string'
@@ -2049,6 +2165,17 @@ return [
                     ],
                     'dashboard' => [
                         'days_of_stats' => 'plugins.admin.dashboard.days_of_stats'
+                    ]
+                ],
+                'blog' => [
+                    'enabled' => 'plugins.blog.enabled',
+                    'buttons' => [
+                        '_simple_search' => 'plugins.blog.buttons._simple_search',
+                        '_related_posts' => 'plugins.blog.buttons._related_posts',
+                        '_random' => 'plugins.blog.buttons._random',
+                        '_taxonomy_list' => 'plugins.blog.buttons._taxonomy_list',
+                        '_archives' => 'plugins.blog.buttons._archives',
+                        '_feed' => 'plugins.blog.buttons._feed'
                     ]
                 ],
                 'email' => [
