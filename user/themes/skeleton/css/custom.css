@@ -2,3 +2,14 @@
   @Author: Matthijs Alderliefste
   @Description: Custom CSS for Skeleton, within Grav
 */
+
+.feature-post {
+ height: 20em;
+ background-image:url("../images/lechon-kirb.jpg");
+}
+.feature-post h2 {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  color: white;
+}
