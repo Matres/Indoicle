@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\Config',
-    'timestamp' => 1446285078,
-    'checksum' => '15257ce9b4f49fb2ab87bbcbde8a9a3f',
+    'timestamp' => 1446287620,
+    'checksum' => 'b6d2edc98d29a56ff1b9e7eab278186a',
     'data' => [
         'streams' => [
             'schemes' => [
@@ -443,7 +443,8 @@ return [
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'A ‘Fast-food content’ website for the Indonesian market'
+                'description' => 'A ‘Fast-food content’ website for the Indonesian market',
+                'author' => 'Matres'
             ],
             'summary' => [
                 'enabled' => true,
@@ -484,7 +485,7 @@ return [
                 'alias' => '/home'
             ],
             'pages' => [
-                'theme' => 'skeleton',
+                'theme' => 'indoicle',
                 'order' => [
                     'by' => 'default',
                     'dir' => 'asc'
